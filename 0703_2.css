@@ -1,0 +1,88 @@
+section {
+  max-width: 600px;
+  margin: auto;
+  border: 3px solid red;
+
+  overflow: hidden;
+  position: relative;
+}
+h1 {
+  display: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+img:not(:first-of-type) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+img:nth-of-type(2) {
+  animation: up 1.5s both;
+}
+img:nth-of-type(3) {
+  animation: left 2.5s both;
+}
+img:nth-of-type(4) {
+  animation: right 2.5s both;
+}
+img:nth-of-type(5) {
+  animation: fade_in 2.5s both;
+}
+img:nth-of-type(6) {
+  animation: fade_out 2.5s both infinite;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes up {
+  0% {
+    top: -150px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+@keyframes left {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes right {
+  from {
+    right: -150px;
+    opacity: 1;
+  }
+  to {
+    right: 0;
+    opacity: 0;
+  }
+}
+@keyframes fade_in {
+  from {
+    /* top: -150px; */
+    opacity: 0;
+  }
+  to {
+    /* top: 0; */
+    opacity: 1;
+  }
+}
+@keyframes fade_out {
+  from {
+    right: 0;
+    opacity: 0.5;
+  }
+  to {
+    right: 150px;
+    opacity: 1;
+  }
+}
